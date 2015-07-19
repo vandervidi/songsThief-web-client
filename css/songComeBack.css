@@ -1,0 +1,120 @@
+@font-face {
+	font-family: NexaBold;
+	src: url("../fonts/nexa/Nexa Bold.otf");
+}
+
+@font-face {
+	font-family: NexaLight;
+	src: url("../fonts/nexa/Nexa Light.otf");
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #303344;
+}
+
+#wrapper {
+	position: relative;
+}
+
+#appNavigator {
+	display: table;
+	width: 100%;
+	background: #2cf0b9;
+	height: 53px;
+	text-align: center;
+}
+
+#logoLeft {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 18px;
+	font-family: NexaBold;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+#logoRight {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 18px;
+	font-family: NexaLight;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+#skipBtn {
+	position: absolute;
+	top: 12px;
+	right: 19px;
+	font-family: NexaBold;
+	color: white;
+	font-size: 20px;
+
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+
+    outline:none;
+}
+
+#mainContent {
+	text-align: center;
+	color: white;
+}
+
+
+#Honey {
+	font-family: NexaLight;
+	font-size: 31px;
+
+	padding-top: 60px;
+}
+
+#imHome {
+	font-family: NexaBold;
+	font-size: 45px;
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+
+#songBack {
+	font-family: NexaBold;
+	font-size: 16px;
+	margin-top: 27px;
+}
+
+#callFor{
+	font-family: NexaLight;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 80px;
+}
+
+
+#revenge{
+	font-family: NexaLight;
+	font-size: 45px;
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+
+#robbersPictures{
+	margin-top: 10px;
+}
+
+#robbersPictures img {
+	width: 72px;
+	padding: 5px;
+}
+
+#rectangle{
+	height: 7.5px;
+	width: 78px;
+	margin: 0 auto;
+	margin-top: 10px;
+	background: #00ffff;
+}

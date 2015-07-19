@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Map</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="css/nearFriends.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/jquery.ui.touch-punch.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLiWhpxl1Rjxna_1y-ylEs6ezAZ8v9by0"></script>
+		<script src="js/nearFriends.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav id="appNavigator">
+				<section id="logoHolder">
+					<span id="logoLeft">song</span>
+					<span id="logoRight">thief</span>
+				</section>
+				<button id="skipBtn" type="button" class="btn btn-default" aria-label="Left Align">skip
+				  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+				</button>
+			</nav>
+			<section id="gMap"></section>
+			<section id="mapOverlay"></section>
+			<section id="droppableChest">
+				<section id="chestHolder" class="droppableStatic"></section>
+			</section>
+		</div>
+	</body>
+</html>

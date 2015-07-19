@@ -1,0 +1,107 @@
+@font-face {
+	font-family: NexaBold;
+	src: url("../fonts/nexa/Nexa Bold.otf");
+}
+
+@font-face {
+	font-family: NexaLight;
+	src: url("../fonts/nexa/Nexa Light.otf");
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #303344;
+}
+
+#wrapper {
+	position: relative;
+}
+
+#appNavigator {
+	width: 100%;
+	background: #2cf0b9;
+	height: 75px;
+	text-align: center;
+}
+#logoHolder{
+	padding-top: 40px;
+	text-align: center;
+}
+#logoLeft {
+	font-size: 18px;
+	font-family: NexaBold;
+	text-transform: uppercase;
+	text-align: right;
+}
+#logoRight {
+	font-size: 18px;
+	font-family: NexaLight;
+	text-transform: uppercase;
+	text-align: left;
+}
+#skipBtn {
+	position: absolute;
+	top: 35px;
+	right: 19px;
+	font-family: NexaBold;
+	color: white;
+	font-size: 20px;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+#mainContent {
+	text-align: center;
+	color: white;
+}
+
+.sText {
+	font-family: NexaLight;
+	font-size: 16px;
+}
+
+.mText {
+	font-family: NexaLight;
+	font-size: 45px;
+}
+
+.lText {
+	font-family: NexaBold;
+	font-size: 50px;
+}
+
+#hello {
+	padding-top: 70px;
+}
+
+#youve {
+	margin-top: 25px;
+}
+
+#justBeen {
+	margin-top: 15px;
+}
+
+#robbed{
+	margin-top: 15px;
+}
+
+#robbers {
+	margin-top: 35px;
+}
+
+#robbers img {
+	width: 72px;
+	padding: 5px;
+}
+
+#songReturnText {
+	font-family: NexaBold;
+	font-size: 16px;
+	margin-top: 50px;
+}

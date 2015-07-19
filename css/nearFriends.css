@@ -1,0 +1,119 @@
+@font-face {
+	font-family: NexaBold;
+	src: url("../fonts/nexa/Nexa Bold.otf");
+}
+
+@font-face {
+	font-family: NexaLight;
+	src: url("../fonts/nexa/Nexa Light.otf");
+}
+
+html, body, #gMap {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #303344;
+}
+
+#wrapper {
+	position: relative;
+	width: 100%;
+	height: 597px;
+}
+
+#appNavigator {
+	width: 100%;
+	background: #2cf0b9;
+	height: 75px;
+	text-align: center;
+}
+#logoHolder{
+	padding-top: 40px;
+	text-align: center;
+}
+#logoLeft {
+	font-size: 18px;
+	font-family: NexaBold;
+	text-transform: uppercase;
+	text-align: right;
+}
+#logoRight {
+	font-size: 18px;
+	font-family: NexaLight;
+	text-transform: uppercase;
+	text-align: left;
+}
+#skipBtn {
+	position: absolute;
+	top: 35px;
+	right: 19px;
+	font-family: NexaBold;
+	color: white;
+	font-size: 20px;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+#gMap {
+	height: 435px;
+	/*visibility: hidden;*/
+}
+
+#mapOverlay {
+	width: 100%;
+	height: 436px;
+	position: absolute;
+	background: #303344;
+	top: 74px;
+}
+
+#droppableChest {
+	height: 77px;
+	width: 100%;
+}
+
+#chestHolder {
+	height: 77px;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.droppableStatic {
+	background: url("../images/box1.png") no-repeat center #303344;
+	background-size: contain;
+}
+
+.droppableGlowingChest {
+	background: url("../images/box_glow1.png") no-repeat center #303344;
+	background-size: contain;
+}
+
+.droppableObjectOverChest {
+	background: url("../images/box_open1.png") no-repeat center #303344;
+	background-size: contain;
+}
+
+.droppableChestAfterUserDropped {
+	background: url("../images/box_closed1.png") no-repeat center #303344;
+	background-size: contain;
+}
+
+/* START of removing google banner and other stuff - Yes we know its illegal. */
+a[href^="http://maps.google.com/maps"] {
+	display: none !important
+}
+a[href^="https://maps.google.com/maps"] {
+	display: none !important
+}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+	display: none;
+}
+.gmnoprint div {
+	background: none !important;
+}
+/* END of google style removal */

@@ -1,0 +1,22 @@
+.hours{
+	font-family: Tungsten;
+	font-size: 83px;
+	color: #00ffff;
+}
+
+.minutes{
+	font-family: Tungsten;
+	font-size: 26px;
+	color:  #00ffff;
+	margin-left: 10px;
+	position: relative;
+    bottom: 40px;
+    border-bottom: 5px solid #00ffff;
+}
+
+.hoursSymbol{
+	font-family: Tungsten;
+	font-size: 26px;
+	color:  #00ffff;
+	padding-right: 5px;
+}

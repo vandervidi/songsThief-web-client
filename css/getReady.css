@@ -1,0 +1,84 @@
+@font-face {
+	font-family: NexaBold;
+	src: url("../fonts/nexa/Nexa Bold.otf");
+}
+
+@font-face {
+	font-family: NexaLight;
+	src: url("../fonts/nexa/Nexa Light.otf");
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #303344;
+}
+#wrapper {
+	position: relative;
+}
+#appNavigator {
+	display: table;
+	width: 100%;
+	background: #2cf0b9;
+	height: 53px;
+	text-align: center;
+}
+#logoLeft {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 18px;
+	font-family: NexaBold;
+	text-transform: uppercase;
+	text-align: right;
+}
+#logoRight {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 18px;
+	font-family: NexaLight;
+	text-transform: uppercase;
+	text-align: left;
+}
+#mainContent {
+	text-align: center;
+	color: white;
+}
+.sText {
+	font-family: NexaLight;
+	font-size: 20px;
+}
+.mText {
+	font-family: NexaLight;
+	font-size: 50px;
+}
+.lText {
+	font-family: NexaBold;
+	font-size: 50px;
+}
+#stealersKeapers {
+	margin-top: 112.5px;
+}
+#letsGet {
+	margin-top: 46.5px;
+}
+#usSome {
+	margin-top: 24.5px;
+}
+#tunes {
+	margin-top: 23.5px;
+}
+#rectangle {
+	background-color: #00ffff;
+	margin: 0 auto;
+	margin-top: 44.5px;
+	height: 8px;
+	width: 79px;
+}
+#pressText {
+	font-family: NexaLight;
+	margin-top: 90px;
+	font-size: 15px;
+}
+.clear {
+	clear: both;
+}

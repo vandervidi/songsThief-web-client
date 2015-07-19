@@ -1,0 +1,173 @@
+@font-face {
+	font-family: NexaBold;
+	src: url("../fonts/nexa/Nexa Bold.otf");
+}
+
+@font-face {
+	font-family: Tungsten;
+	src: url("../fonts/tungsten/Tungsten-Semibold.otf");
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #303344;
+}
+#wrapper {
+	height: 700px;
+}
+
+main{
+	min-height: 650px;
+}
+#appNavigator {
+	/*display: table;*/
+	width: 100%;
+	background: #2cf0b9;
+	height: 75px;
+	text-align: center;
+	font-size: 16px;
+	font-family: NexaBold;
+	text-transform: uppercase;
+}
+
+#navTitle {
+	  padding-top: 40px;
+}
+#backBtn {
+	position: absolute;
+	top: 32px;
+	left: 8px;
+}
+.transparentBtn {
+	font-family: NexaBold;
+	color: white;
+	font-size: 20px;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+#songs{
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+
+.center{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.song{
+	height: 120px;
+}
+
+.songData{
+  width: 250px;
+  margin: 0 auto;
+}
+
+.circleHolder{
+	float: right;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.counterHolder{
+	float: left;
+}
+
+.hours{
+	font-family: Tungsten;
+	font-size: 83px;
+	color: #2cf0b9;
+}
+
+.minutes{
+	font-family: Tungsten;
+	font-size: 26px;
+	color: #2cf0b9;
+	margin-left: 10px;
+	position: relative;
+    bottom: 40px;
+    border-bottom: 5px solid #00ffff;
+}
+
+.hoursSymbol{
+	font-family: Tungsten;
+	font-size: 26px;
+	color: #00ffff;
+	padding-right: 5px;
+}
+
+#screensFlow {
+  	width: 35px;
+  	margin: 0 auto;
+  	left: 48%;
+}
+
+.active{
+	float:left;
+}
+.inactive{
+	float:left;
+}
+.left {
+	margin-right: 7px;
+}
+.right {
+}
+
+
+/********* player *********/
+#playerControlls {
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+}
+#slider {
+	width: 100%;
+}
+#controls {
+	/* height: 75px; */
+  	background-color: #2cf0b9;
+  	display: flex;
+}
+.controlsBtn {
+	width:33.3%;
+	padding-right: 12%;
+ 	padding-left: 12%;
+  	display: table-cell;
+  	font-size: 43px;
+}
+#prev {
+}
+#play{
+}
+#next{
+}
+
+#screensFlow img{
+	width: 14px;
+	height: 14px;
+}
+
+#screensFlowWrapper{
+	padding-bottom: 30px;
+}
+
+.clear{
+	clear: both;
+}
+
+.ui-loader ,.ui-loader-default{
+	display: none !important;
+}
+
+#player{
+	display: none;
+}
