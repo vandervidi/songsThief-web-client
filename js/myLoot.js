@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 	// Bind the swipeHandler callback function to the swipe event on div.box
 	// on 'swipe-right'
-	$("body").on( "swiperight", function ( event ){
+	$("body").on( "swipeleft", function ( event ){
 		window.location.href = "stolenFromMe.html";
 	});
 
@@ -169,10 +169,10 @@ $(document).ready(function() {
 		console.log($span);
 		if ($($span).hasClass("glyphicon-play")){
 			$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
-			player.pauseVideo();
+			player.playVideo();
 		}else if ($($span).hasClass("glyphicon-pause")){
 			$($span).removeClass("glyphicon-pause").addClass("glyphicon-play");
-			player.playVideo();
+			player.pauseVideo();
 		}
 	});
 
@@ -226,6 +226,7 @@ function playSong(e){
 		console.log('play song: ', e.dataset.url);
 		//load the song url to thwe player
 		player.loadVideoById({'videoId': s});
+		player.pauseVideo();
 	// }else {
 	// 	//hide player
 	// 	$('#player').fadeOut(500);
@@ -234,7 +235,9 @@ function playSong(e){
 	// }
 }
 
-
+function test(){
+	console.log("test");
+}
 
 //This function re-enables victim's stolen song.
 function giveBackSong_reenableVictimSong(song){
