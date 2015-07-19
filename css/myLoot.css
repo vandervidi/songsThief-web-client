@@ -160,6 +160,40 @@ main{
 	padding-bottom: 30px;
 }
 
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    background-color: black;
+    /*fix for FF unable to apply focus style bug */
+    /*border: 1px solid white;*/
+    
+    /*required for proper track sizing in FF*/
+    /*width: 100%;*/
+	height: 5px;
+	margin-bottom: 20px;
+}
+/*input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    /*background: #ddd;*/
+    /*border: none;*/
+    /*border-radius: 3px;*/
+/*}*/
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /*border: none;*/
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background: #2cf0b9;
+    /*margin-top: -4px;*/
+    
+}
+
+
+
 .clear{
 	clear: both;
 }

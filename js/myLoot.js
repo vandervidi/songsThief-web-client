@@ -2,10 +2,24 @@ var userId = window.sessionStorage.id,
 	player;
 var counterDownTime;  //This will hold the remaining time left counter of a song
 
+// first, load the YouTube Iframe API:
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// some variables (global here, but they don't have to be)
+var player;
+var videoId = 'SomeYoutubeIdHere';
+var videotime = 0;
+var timeupdater = null;
+
+var currentChildNumber, 
+totalChildNumber;
 
 
 $(document).ready(function() {
-			// 2. This code loads the IFrame Player API code asynchronously.
+	// 2. This code loads the IFrame Player API code asynchronously.
 	var tag = document.createElement('script');
 
 	tag.src = "https://www.youtube.com/iframe_api";
@@ -175,7 +189,8 @@ $(document).ready(function() {
 			player.pauseVideo();
 		}
 	});
-
+	
+	
 	//&("#play > span").removeClass("glyphicon-play").addClass("glyphicon-pause");
 
 });
@@ -184,21 +199,22 @@ $(document).ready(function() {
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady(e) {
+	// load your player when the API becomes ready
 	  player = new YT.Player('player', {
-	  height: '130',
-	  width: '130',
-	  autoplay: 0,
-	  events: {
-	    'onReady': onPlayerReady,
-	    'onStateChange': onPlayerStateChange
-	  }
+		  height: '130',
+		  width: '130',
+		  autoplay: 0,
+		  events: {
+		    'onReady': onPlayerReady,
+		    'onStateChange': onPlayerStateChange
+		  }
 	});
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-	event.target.playVideo();
+	//event.target.playVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -206,6 +222,33 @@ function onPlayerReady(event) {
 //    the player should play for six seconds and then stop.
 
 function onPlayerStateChange(event) {
+
+	switch (event.data){
+		case -1:	//unstarted
+			console.log(-1)
+			player.pauseVideo();
+			break;
+		case 0:		//ended
+			console.log(0)
+			break;
+		case 1:		//playing
+			// set slider max min val
+			$("#slider").prop({
+				'min' : 0,
+				'max' : event.target.getDuration()
+			});
+			console.log('player.getDuration() ', event.target.getDuration());
+			break;
+		case 2:		//pause
+			console.log(2)
+			break;
+		case 3:		//baffering
+			console.log(3)
+			break;
+		case 5:		//video cued
+			console.log(5)
+			break;
+	}
 }
 
 function stopVideo() {
@@ -213,31 +256,106 @@ function stopVideo() {
 }
 
 function playSong(e){
-	// if ( $('#player').css('display') == 'none' ){
-		//hide screensFlow circles
-		var s = e.dataset.url;
-		s = s.split('=');
-		s = s[1];
-
-		$('#screensFlow').fadeOut(500);
-		//reveal player
-		$('#playerControlls').fadeIn( 1000 );
-		$('#songs').css("padding-bottom", "80px");
-		console.log('play song: ', e.dataset.url);
-		//load the song url to thwe player
-		player.loadVideoById({'videoId': s});
-		player.pauseVideo();
-	// }else {
-	// 	//hide player
-	// 	$('#player').fadeOut(500);
-	// 	//reveal active page circles
-	// 	$('#screensFlow').fadeIn( 2000 );
+	// if (player.getPlayerState() == 2 ){
+// 		
 	// }
+	debugger;
+	//initiate song child number base
+	var i = 0;
+	while (e.parentNode.children[i] != e) i++;
+	//at the end i will contain the index.
+	
+	currentChildNumber = i;
+	totalChildNumber = e.parentNode.childElementCount-1;
+	
+	// Enable other buttons
+	$('#prev').click(prev);
+	$('#next').click(next);
+	
+	//hide screensFlow circles
+	var s = e.dataset.url;
+	s = s.split('=');
+	s = s[1];
+
+	$('#screensFlow').fadeOut(500);
+	//reveal player
+	$('#playerControlls').fadeIn( 1000 );
+	$('#songs').css("padding-bottom", "80px");
+	console.log('play song: ', e.dataset.url);
+	//load the song url to thwe player
+	player.loadVideoById({'videoId': s});
 }
 
-function test(){
-	console.log("test");
+// when the player is ready, start checking the current time every 100 ms.
+function onPlayerReady() {
+  function updateTime() {
+    var oldTime = videotime;
+    if(player && player.getCurrentTime) {
+      videotime = player.getCurrentTime();
+    }
+    if(videotime !== oldTime) {
+      onProgress(videotime);
+    }
+  }
+  timeupdater = setInterval(updateTime, 100);
 }
+
+// when the time changes, this will be called.
+function onProgress(currentTime) {
+	// Change the slider
+	$("#slider").val(currentTime);
+}
+
+
+function prev(){
+	currentChildNumber--;
+	if (currentChildNumber<0){
+		currentChildNumber = totalChildNumber;
+	}
+	//play
+	debugger
+	var songTag = $('#songs').children()[currentChildNumber];
+	var s = songTag.dataset.url;
+	s = s.split('=');
+	s = s[1];
+
+	//load the song url to thwe player
+	player.loadVideoById({'videoId': s});
+	debugger;
+	var $span = $("#play span")[0];
+	console.log($span);
+	if ($($span).hasClass("glyphicon-play")){
+		$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
+	}else if ($($span).hasClass("glyphicon-pause")){
+		$($span).removeClass("glyphicon-pause").addClass("glyphicon-play");
+	}
+}
+function next(){
+	debugger;
+	currentChildNumber++;
+	if (currentChildNumber > totalChildNumber){
+		currentChildNumber = 0;
+	}
+	//play
+	debugger;
+	var songTag = $('#songs').children()[currentChildNumber];
+	var s = songTag.dataset.url;
+	s = s.split('=');
+	s = s[1];
+
+	//load the song url to thwe player
+	player.loadVideoById({'videoId': s});
+	debugger;
+	var $span = $("#play span")[0];
+	console.log($span);
+	if ($($span).hasClass("glyphicon-play")){
+		$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
+	}else if ($($span).hasClass("glyphicon-pause")){
+		$($span).removeClass("glyphicon-pause").addClass("glyphicon-play");
+	}
+}
+
+
 
 //This function re-enables victim's stolen song.
 function giveBackSong_reenableVictimSong(song){
