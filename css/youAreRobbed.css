@@ -19,40 +19,44 @@ html, body {
 }
 
 #appNavigator {
+	display: table;
 	width: 100%;
 	background: #2cf0b9;
-	height: 75px;
+	height: 53px;
 	text-align: center;
 }
-#logoHolder{
-	padding-top: 40px;
-	text-align: center;
-}
+
 #logoLeft {
+	display: table-cell;
+	vertical-align: middle;
 	font-size: 18px;
 	font-family: NexaBold;
 	text-transform: uppercase;
 	text-align: right;
 }
+
 #logoRight {
+	display: table-cell;
+	vertical-align: middle;
 	font-size: 18px;
 	font-family: NexaLight;
 	text-transform: uppercase;
 	text-align: left;
 }
+
 #skipBtn {
 	position: absolute;
-	top: 35px;
+	top: 12px;
 	right: 19px;
 	font-family: NexaBold;
 	color: white;
 	font-size: 20px;
 	background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
 }
 
 #mainContent {
@@ -87,7 +91,7 @@ html, body {
 	margin-top: 15px;
 }
 
-#robbed{
+#robbed {
 	margin-top: 15px;
 }
 

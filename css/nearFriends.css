@@ -21,23 +21,25 @@ html, body, #gMap {
 	height: 597px;
 }
 
+
 #appNavigator {
+	display: table;
 	width: 100%;
 	background: #2cf0b9;
-	height: 75px;
-	text-align: center;
-}
-#logoHolder{
-	padding-top: 40px;
+	height: 53px;
 	text-align: center;
 }
 #logoLeft {
+	display: table-cell;
+	vertical-align: middle;
 	font-size: 18px;
 	font-family: NexaBold;
 	text-transform: uppercase;
 	text-align: right;
 }
 #logoRight {
+	display: table-cell;
+	vertical-align: middle;
 	font-size: 18px;
 	font-family: NexaLight;
 	text-transform: uppercase;
@@ -45,7 +47,7 @@ html, body, #gMap {
 }
 #skipBtn {
 	position: absolute;
-	top: 35px;
+	top: 12px;
 	right: 19px;
 	font-family: NexaBold;
 	color: white;
@@ -68,7 +70,7 @@ html, body, #gMap {
 	height: 436px;
 	position: absolute;
 	background: #303344;
-	top: 74px;
+	top: 53px;
 }
 
 #droppableChest {

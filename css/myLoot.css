@@ -17,14 +17,14 @@ html, body {
 	height: 700px;
 }
 
-main{
+main {
 	min-height: 650px;
 }
 #appNavigator {
-	/*display: table;*/
+	display: table;
 	width: 100%;
 	background: #2cf0b9;
-	height: 75px;
+	height: 53px;
 	text-align: center;
 	font-size: 16px;
 	font-family: NexaBold;
@@ -32,72 +32,74 @@ main{
 }
 
 #navTitle {
-	  padding-top: 40px;
+	display: table-cell;
+	vertical-align: middle;
 }
+
 #backBtn {
 	position: absolute;
-	top: 32px;
+	top: 14px;
 	left: 8px;
 }
+
 .transparentBtn {
 	font-family: NexaBold;
 	color: white;
 	font-size: 20px;
 	background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
 }
 
-#songs{
+#songs {
 	margin: 0 auto;
 	padding-top: 15px;
 }
 
-
-.center{
+.center {
 	margin-top: 10px;
 	text-align: center;
 }
 
-.song{
+.song {
 	height: 120px;
 }
 
-.songData{
-  width: 250px;
-  margin: 0 auto;
+.songData {
+	width: 250px;
+	margin: 0 auto;
 }
 
-.circleHolder{
+.circleHolder {
 	float: right;
 	display: inline-block;
 	margin-top: 20px;
 }
 
-.counterHolder{
+.counterHolder {
 	float: left;
 }
 
-.hours{
+.hours {
 	font-family: Tungsten;
 	font-size: 83px;
 	color: #2cf0b9;
 }
 
-.minutes{
+.minutes {
 	font-family: Tungsten;
 	font-size: 26px;
 	color: #2cf0b9;
 	margin-left: 10px;
 	position: relative;
-    bottom: 40px;
-    border-bottom: 5px solid #00ffff;
+	bottom: 40px;
+	border-bottom: 5px solid #00ffff;
 }
 
-.hoursSymbol{
+.hoursSymbol {
 	font-family: Tungsten;
 	font-size: 26px;
 	color: #00ffff;
@@ -105,23 +107,25 @@ main{
 }
 
 #screensFlow {
-  	width: 35px;
-  	margin: 0 auto;
-  	left: 48%;
+	width: 35px;
+	margin: 0 auto;
+	left: 48%;
 }
 
-.active{
-	float:left;
+.active {
+	float: left;
 }
-.inactive{
-	float:left;
+
+.inactive {
+	float: left;
 }
+
 .left {
 	margin-right: 7px;
 }
+
 .right {
 }
-
 
 /********* player *********/
 #playerControlls {
@@ -134,74 +138,53 @@ main{
 }
 #controls {
 	/* height: 75px; */
-  	background-color: #2cf0b9;
-  	display: flex;
+	background-color: #2cf0b9;
+	display: flex;
 }
 .controlsBtn {
-	width:33.3%;
+	width: 33.3%;
 	padding-right: 12%;
- 	padding-left: 12%;
-  	display: table-cell;
-  	font-size: 43px;
-}
-#prev {
-}
-#play{
-}
-#next{
+	padding-left: 12%;
+	display: table-cell;
+	font-size: 43px;
 }
 
-#screensFlow img{
+
+#screensFlow img {
 	width: 14px;
 	height: 14px;
 }
 
-#screensFlowWrapper{
+#screensFlowWrapper {
 	padding-bottom: 30px;
 }
 
-
 input[type=range] {
-    /*removes default webkit styles*/
-    -webkit-appearance: none;
-    
-    background-color: black;
-    /*fix for FF unable to apply focus style bug */
-    /*border: 1px solid white;*/
-    
-    /*required for proper track sizing in FF*/
-    /*width: 100%;*/
+	/*removes default webkit styles*/
+	-webkit-appearance: none;
+	background-color: black;
 	height: 5px;
 	margin-bottom: 20px;
 }
-/*input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 5px;
-    /*background: #ddd;*/
-    /*border: none;*/
-    /*border-radius: 3px;*/
-/*}*/
+
+
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    /*border: none;*/
-    height: 13px;
-    width: 13px;
-    border-radius: 50%;
-    background: #2cf0b9;
-    /*margin-top: -4px;*/
-    
+	-webkit-appearance: none;
+	height: 13px;
+	width: 13px;
+	border-radius: 50%;
+	background: #2cf0b9;
+
 }
 
-
-
-.clear{
+.clear {
 	clear: both;
 }
 
-.ui-loader ,.ui-loader-default{
+.ui-loader, .ui-loader-default {
 	display: none !important;
 }
 
-#player{
+#player {
 	display: none;
 }

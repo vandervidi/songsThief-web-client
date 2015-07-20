@@ -5,7 +5,6 @@ $(document).ready(function() {
 			type : "POST",
 			url : 'https://songthief.herokuapp.com/getAppId',
 			success : function(data) {
-				console.log(data.appId);
 				FB.init({
 					appId : data.appId,
 					xfbml : true,
@@ -34,7 +33,8 @@ $(document).ready(function() {
 			}
 		});
 
-	}; ( function(d, s, id) {
+	};
+	( function(d, s, id) {
 			var js,
 			    fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) {
@@ -48,13 +48,11 @@ $(document).ready(function() {
 });
 
 function saveUserData(userId, profilePic, friendsListFb) {
-	console.log("AJAX ", friendsListFb);
 	// Create new friends list from response 'friendsList'
 	var friendsList = [];
 	$.each(friendsListFb, function(i, friend) {
 		friendsList.push(friend.id);
 	});
-	console.log('friendsList ', friendsList);
 
 	$.ajax({
 		type : "POST",
@@ -71,7 +69,7 @@ function saveUserData(userId, profilePic, friendsListFb) {
 		success : function(data) {
 			console.log('data: ', data);
 			if (data.success) {
-				
+
 				//Save logged-in user facebook Id in local sessionStorage
 				window.sessionStorage.setItem("id", userId);
 
@@ -106,7 +104,6 @@ function saveUserData(userId, profilePic, friendsListFb) {
 function getAllFbData(response) {
 	/* Get friends */
 	FB.api('/me/friends', function(resFriends) {
-		console.log('get FB friends ', resFriends);
 
 		/* Profile picture */
 		FB.api('/' + response.authResponse.userID + '/picture', function(resProfilePic) {

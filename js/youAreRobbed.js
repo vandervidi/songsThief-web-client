@@ -7,26 +7,23 @@ $(document).ready(function() {
 			userId : window.sessionStorage.id,
 		},
 		success : function(data) {
-			console.log('data: ', data);
 			if (data.success) {
 				//Configurin navifation
-				if(data.songsAreBack){
+				if (data.songsAreBack) {
 					// Onclick for 'skip' button
-					$('#skipBtn').click(function (){
+					$('#skipBtn').click(function() {
 						window.location.href = "songComeBack.html";
 					});
-				}
-				else{
+				} else {
 					// Onclick for 'skip' button
-					$('#skipBtn').click(function (){
+					$('#skipBtn').click(function() {
 						window.location.href = "getReady.html";
 					});
 				}
-
-
-
+				
+				//injecting robbers profile pictures
 				$.each(data.robbersData, function(key, val) {
-				  $("#robbers").append("<img src=" + val.profilePic + " alt=" +  val.robberId + ">");
+					$("#robbers").append("<img src=" + val.profilePic + " alt=" + val.robberId + ">");
 				});
 			} else {
 				// prompt msg to user on failure
@@ -34,7 +31,7 @@ $(document).ready(function() {
 			}
 		},
 		error : function(objRequest, errortype) {
-			console.log("Cannot get followd users Json");
+			console.log("Cannot get frobbers list");
 		}
-	}); 
-});
+	});
+}); 

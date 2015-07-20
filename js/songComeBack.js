@@ -1,15 +1,14 @@
-$(document).ready(function(){
+$(document).ready(function() {
 	$.ajax({
 		type : "POST",
 		url : 'https://songthief.herokuapp.com/getRobbersOfSongsThatAreBack',
 		data : {
-			userId :  window.sessionStorage.id
+			userId : window.sessionStorage.id
 		},
 		success : function(data) {
-			if(data.success){
-				console.log(data);
-				$.each(data.robbersData, function(key, robber){
-					$('#robbersPictures').append('<img src=" ' +  robber.profilePic + '">');
+			if (data.success) {
+				$.each(data.robbersData, function(key, robber) {
+					$('#robbersPictures').append('<img src=" ' + robber.profilePic + '">');
 				});
 			}
 		},
@@ -19,14 +18,8 @@ $(document).ready(function(){
 	});
 
 	// Onclick for 'skip' button
-	$('#skipBtn').click(function (){
+	$('#skipBtn').click(function() {
 		window.location.href = "getReady.html";
 	});
 });
-
-
-
-
-
-
 
