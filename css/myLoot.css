@@ -138,7 +138,7 @@ main {
 }
 #controls {
 	/* height: 75px; */
-	background-color: #2cf0b9;
+	background-color: #2cf0b9 !important;
 	display: flex;
 }
 .controlsBtn {
@@ -148,7 +148,6 @@ main {
 	display: table-cell;
 	font-size: 43px;
 }
-
 
 #screensFlow img {
 	width: 14px;
@@ -163,10 +162,9 @@ input[type=range] {
 	/*removes default webkit styles*/
 	-webkit-appearance: none;
 	background-color: black;
-	height: 5px;
+	height: 4px;
 	margin-bottom: 20px;
 }
-
 
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
@@ -174,7 +172,34 @@ input[type=range]::-webkit-slider-thumb {
 	width: 13px;
 	border-radius: 50%;
 	background: #2cf0b9;
+}
 
+input[type=range]::-webkit-slider-runnable-track {
+	-webkit-appearance: none;
+	background: #000;
+	height: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb:before {
+	position: absolute;
+	top: 2.5px;
+	right: 100%;
+	left: -1300px;
+	background: -webkit-linear-gradient(left, #3cfba0, #009bff); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #3cfba0, #009bff); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #3cfba0, #009bff); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #3cfba0, #009bff); /* Standard syntax (must be last) */
+	content: '';
+	height: 4px;
+	pointer-events: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	/*width: 15px;
+	 height: 15px;*/
+	-webkit-appearance: none;
+	position: relative;
+	bottom: 3px;
 }
 
 .clear {
@@ -188,3 +213,12 @@ input[type=range]::-webkit-slider-thumb {
 #player {
 	display: none;
 }
+
+
+.controlsBtn, .controlsBtn:hover,.ui-btn-active:active{
+	color:white !important;
+	background-color: #2cf0b9 !important;
+	border: 0px solid !important;
+}
+
+

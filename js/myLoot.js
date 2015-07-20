@@ -206,20 +206,17 @@ function onPlayerReady(event) {
 }
 
 //  The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-
 function onPlayerStateChange(event) {
 
 	switch (event.data) {
 	case -1:
 		//unstarted
 		console.log(-1);
-		player.pauseVideo();
+		//player.pauseVideo();
 		break;
 	case 0:
 		//ended
-		console.log(0);
+		next();
 		break;
 	case 1:
 		//playing
@@ -268,17 +265,23 @@ function playSong(e) {
 	var s = e.dataset.url;
 	s = s.split('=');
 	s = s[1];
-	
+
 	$('#screensFlow').fadeOut(500);
-	
+
 	//reveal player
 	$('#playerControlls').fadeIn(1000);
 	$('#songs').css("padding-bottom", "80px");
-	
+
 	//load the song url to thwe player
 	player.loadVideoById({
 		'videoId' : s
 	});
+
+	var $span = $(" > span", "#play")[0];
+
+	$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
+	player.playVideo();
+
 }
 
 // when the player is ready, start checking the current time every 100 ms.
@@ -320,11 +323,7 @@ function prev() {
 	});
 
 	var $span = $("#play span")[0];
-	if ($($span).hasClass("glyphicon-play")) {
-		$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
-	} else if ($($span).hasClass("glyphicon-pause")) {
-		$($span).removeClass("glyphicon-pause").addClass("glyphicon-play");
-	}
+	$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
 }
 
 // This function plays the next song in the list
@@ -339,16 +338,14 @@ function next() {
 	s = s.split('=');
 	s = s[1];
 
-	//load the song url to thwe player
+	//load the song url to the player
 	player.loadVideoById({
 		'videoId' : s
 	});
 	var $span = $("#play span")[0];
-	if ($($span).hasClass("glyphicon-play")) {
-		$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
-	} else if ($($span).hasClass("glyphicon-pause")) {
-		$($span).removeClass("glyphicon-pause").addClass("glyphicon-play");
-	}
+	
+	$($span).removeClass("glyphicon-play").addClass("glyphicon-pause");
+
 }
 
 //This function re-enables victim's stolen song.
@@ -362,7 +359,7 @@ function giveBackSong_reenableVictimSong(song) {
 			victimId : song.userId
 		},
 		success : function(data) {
-			
+
 		},
 		error : function(objRequest, errortype) {
 			console.log("Cannot get list of songs that came back");
